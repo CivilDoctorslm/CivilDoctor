@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import '../../styles/Hero.css';
 import BuildingScanner from './BuildingScanner';
 import { useContact } from '../context/ContactContext';
@@ -77,7 +78,13 @@ const Hero = () => {
                         {/* 25+ Years of Excellence */}
                         <div className="stat-card-wrapper celebrate-wrapper">
                             <div className="stat-card celebration-card">
-                                <div className="popper-icon">🎉</div>
+                                <div className="lottie-blast-container">
+                                    <DotLottieReact
+                                        src="https://lottie.host/a38d657d-bac7-43a9-a886-6a1dd59e8fbb/atDKHADOni.lottie"
+                                        loop
+                                        autoplay
+                                    />
+                                </div>
                                 <div className="stat-number">25+</div>
                                 <div className="stat-label">Years of Excellence</div>
                             </div>

@@ -1,0 +1,67 @@
+/**
+ * Blueprint Animation CSS
+ */
+
+.blueprint-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    background-color: transparent;
+    overflow: hidden;
+    opacity: 0.15;
+}
+
+/* Isometric Building Styling */
+.blueprint-path {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 1.1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.9;
+}
+
+/* Hatching (windows/louvers) */
+.blueprint-hatch {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 0.6px;
+    opacity: 0.3;
+}
+
+/* Drafting Markers (cross-hairs and extended lines) */
+.marker {
+    stroke-width: 1px;
+    opacity: 0.4;
+}
+
+/* Reveal effect kept but one-time and slower */
+.blueprint-path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: blueprintReveal 6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes blueprintReveal {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* Dark Mode Theme Adjustment */
+[data-theme="dark"] .blueprint-background {
+    opacity: 0.08;
+}
+
+[data-theme="dark"] .blueprint-path {
+    stroke: #ffffff;
+}
+
+[data-theme="dark"] .passing-line {
+    stroke: #ffffff;
+}

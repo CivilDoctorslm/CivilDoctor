@@ -13,11 +13,11 @@ import Products from './pages/Products';
 import ServicesPage from './pages/ServicesPage';
 import ServiceDetail from './pages/ServiceDetail';
 import PartnersPage from './pages/PartnersPage';
-import MolecularBackground from './components/MolecularBackground';
+// import MolecularBackground from './components/MolecularBackground';
 import CustomCursor from './components/CustomCursor';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import LoadingScreen from './components/LoadingScreen';
-import BackgroundLottie from './components/BackgroundLottie';
+import BlueprintAnimation from './components/BlueprintAnimation';
 
 /* Import Admin Components */
 import { AuthProvider } from './hooks/useAuth';
@@ -156,8 +156,8 @@ function MainContent() {
       <LoadingScreen isLoading={isLoading} />
       <div className="public-layout">
         <CustomCursor />
-        <BackgroundLottie />
-        <MolecularBackground />
+        <BlueprintAnimation />
+        {/* <MolecularBackground /> */}
         <Navbar activeSection={activeSection} />
         <Routes>
           <Route path="/" element={<HomePage />} />

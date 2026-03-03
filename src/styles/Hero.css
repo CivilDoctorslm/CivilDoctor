@@ -43,6 +43,7 @@
     grid-template-columns: 1.1fr 0.9fr;
     align-items: start;
     gap: 60px;
+    margin-top: 25px;
     margin-bottom: 10px;
 }
 
@@ -224,7 +225,9 @@
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 12px;
+    /* Optical alignment with text cap-height */
     animation: slide-up-entry 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s backwards;
 }
 
@@ -450,242 +453,23 @@
     border: 2px solid var(--primary) !important;
 }
 
-.popper-icon {
+.lottie-blast-container {
     position: absolute;
-    top: -20px;
-    right: -10px;
-    font-size: 2.5rem;
-    opacity: 1;
-    transform: rotate(-15deg);
+    top: -55px;
+    right: -30px;
+    width: 170px;
+    height: 170px;
     z-index: 101;
-    animation: popper-kick 3s infinite;
-}
-
-@keyframes popper-kick {
-
-    0%,
-    90% {
-        transform: rotate(-15deg) scale(1.2);
-    }
-
-    5% {
-        transform: rotate(-30deg) scale(1.8);
-    }
-
-    15% {
-        transform: rotate(-10deg) scale(1.1);
-    }
-}
-
-.confetti-container {
-    position: absolute;
-    top: 0;
-    left: 80%;
-    width: 1px;
-    height: 1px;
     pointer-events: none;
-    z-index: 100;
+    /* Allow interaction with card underneath */
 }
 
-.particle {
-    position: absolute;
-    opacity: 0;
-    animation: blast-fancy 3s infinite;
-}
-
-.particle.square {
-    width: 10px;
-    height: 10px;
-}
-
-.particle.diamond {
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-}
-
-.particle.ribbon {
-    width: 18px;
-    height: 5px;
-    border-radius: 2px;
-}
-
-/* Individual particle variations with vibrant colors from image */
-.particle:nth-child(1) {
-    --x: -120px;
-    --y: -180px;
-    --r: 360deg;
-    background: #ff0000;
-    animation-delay: 0s;
-}
-
-.particle:nth-child(2) {
-    --x: -60px;
-    --y: -220px;
-    --r: -720deg;
-    background: #00ccff;
-    animation-delay: 0.1s;
-}
-
-.particle:nth-child(3) {
-    --x: 0px;
-    --y: -250px;
-    --r: 1080deg;
-    background: #ffcc00;
-    animation-delay: 0.05s;
-}
-
-.particle:nth-child(4) {
-    --x: 60px;
-    --y: -220px;
-    --r: -360deg;
-    background: #ff00ff;
-    animation-delay: 0.15s;
-}
-
-.particle:nth-child(5) {
-    --x: 120px;
-    --y: -180px;
-    --r: 720deg;
-    background: #00ff00;
-    animation-delay: 0s;
-}
-
-.particle:nth-child(6) {
-    --x: -180px;
-    --y: -120px;
-    --r: -1080deg;
-    background: #ff3300;
-    animation-delay: 0.1s;
-}
-
-.particle:nth-child(7) {
-    --x: 180px;
-    --y: -120px;
-    --r: 360deg;
-    background: #3333ff;
-    animation-delay: 0.2s;
-}
-
-.particle:nth-child(8) {
-    --x: -90px;
-    --y: -140px;
-    --r: 720deg;
-    background: #ff9900;
-    animation-delay: 0.15s;
-}
-
-.particle:nth-child(9) {
-    --x: 60px;
-    --y: -100px;
-    --r: -720deg;
-    background: #00ffcc;
-    animation-delay: 0.05s;
-}
-
-.particle:nth-child(10) {
-    --x: 0px;
-    --y: -70px;
-    --r: 360deg;
-    background: #ff0066;
-    animation-delay: 0.25s;
-}
-
-.particle:nth-child(11) {
-    --x: -150px;
-    --y: -40px;
-    --r: -360deg;
-    background: #9933ff;
-    animation-delay: 0.1s;
-}
-
-.particle:nth-child(12) {
-    --x: 150px;
-    --y: -40px;
-    --r: 720deg;
-    background: #ffcc33;
-    animation-delay: 0.2s;
-}
-
-.particle:nth-child(13) {
-    --x: -100px;
-    --y: -160px;
-    --r: 1080deg;
-    background: #0066ff;
-    animation-delay: 0.3s;
-}
-
-.particle:nth-child(14) {
-    --x: 100px;
-    --y: -160px;
-    --r: -1080deg;
-    background: #ccff00;
-    animation-delay: 0.15s;
-}
-
-.particle:nth-child(15) {
-    --x: -20px;
-    --y: -200px;
-    --r: 360deg;
-    background: #ff0033;
-    animation-delay: 0.35s;
-}
-
-.particle:nth-child(16) {
-    --x: 20px;
-    --y: -200px;
-    --r: -360deg;
-    background: #33ff99;
-    animation-delay: 0.25s;
-}
-
-.particle:nth-child(17) {
-    --x: -180px;
-    --y: -60px;
-    --r: 720deg;
-    background: #ff6600;
-    animation-delay: 0.4s;
-}
-
-.particle:nth-child(18) {
-    --x: 180px;
-    --y: -60px;
-    --r: -720deg;
-    background: #6600ff;
-    animation-delay: 0.3s;
-}
-
-.particle:nth-child(19) {
-    --x: -90px;
-    --y: -90px;
-    --r: 1080deg;
-    background: #00ff33;
-    animation-delay: 0.2s;
-}
-
-.particle:nth-child(20) {
-    --x: 90px;
-    --y: -90px;
-    --r: -1080deg;
-    background: #ff33ff;
-    animation-delay: 0.1s;
-}
-
-@keyframes blast-fancy {
-    0% {
-        transform: translate(0, 0) rotate(0deg) scale(0);
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-        transform: translate(calc(var(--x) * 0.2), calc(var(--y) * 0.2)) rotate(calc(var(--r) * 0.2)) scale(1.8);
-    }
-
-    20%,
-    100% {
-        transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(0);
-        opacity: 0;
+@media (max-width: 480px) {
+    .lottie-blast-container {
+        top: -35px;
+        right: -25px;
+        width: 100px;
+        height: 100px;
     }
 }
 

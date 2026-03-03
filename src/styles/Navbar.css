@@ -21,8 +21,10 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 12px 0 !important;
-        min-height: 70px;
+        padding: 0 !important;
+        /* Use fixed height for consistency */
+        height: 70px !important;
+        min-height: 70px !important;
     }
 }
 
@@ -136,22 +138,36 @@
     .nav-links {
         display: none;
         position: fixed;
-        top: 68px;
-        /* Perfectly aligned with navbar height */
+        top: 70px;
         left: 0;
         width: 100%;
-        height: calc(100vh - 68px);
+        height: auto;
+        /* Only as tall as content */
+        max-height: calc(100vh - 70px);
         flex-direction: column;
-        padding: 40px 20px;
-        gap: 25px;
-        /* Refined mobile nav-link spacing */
-        align-items: center;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(25px);
-        /* Increased blur for mobile */
-        box-shadow: none;
+        padding: 5px 0 30px;
+        /* Tight top padding to stay at the Very Top */
+        gap: 0;
+        align-items: flex-start;
+        background: #ffffff;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         z-index: 9998;
         overflow-y: auto;
+        border-bottom: 2px solid var(--primary);
+        animation: menuSlideDown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    @keyframes menuSlideDown {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .nav-links.active {
@@ -189,14 +205,15 @@
 @media (max-width: 768px) {
     .nav-link {
         width: 100%;
-        text-align: center;
-        padding: 16px 0;
-        font-size: 1.15rem;
-        font-weight: 500;
+        text-align: left;
+        padding: 18px 20px;
+        font-size: 1.1rem;
+        font-weight: 600;
         color: var(--dark) !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        display: block;
-        /* Ensure it takes full width */
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        /* border-bottom Removed for cleaner card-like look */
     }
 
     .nav-item-dropdown {
@@ -207,7 +224,7 @@
 
     .nav-link.active {
         color: var(--primary) !important;
-        background: rgba(14, 165, 233, 0.04) !important;
+        background: rgba(30, 58, 138, 0.04) !important;
         font-weight: 700;
     }
 
@@ -298,7 +315,7 @@
     align-items: center;
     justify-content: center;
     color: var(--primary);
-    background: rgba(14, 165, 233, 0.08);
+    background: rgba(30, 58, 138, 0.08);
     /* Light blue accent */
     border-radius: 10px;
     flex-shrink: 0;
@@ -306,7 +323,7 @@
 }
 
 [data-theme="dark"] .service-nav-icon {
-    background: rgba(14, 165, 233, 0.15);
+    background: rgba(30, 58, 138, 0.15);
 }
 
 .service-nav-item:hover .service-nav-icon {
