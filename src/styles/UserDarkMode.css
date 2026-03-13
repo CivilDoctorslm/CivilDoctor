@@ -107,6 +107,84 @@
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
+/* Contact Form - Dark Mode Input Fix */
+/* These overrides beat the !important in Contact.css by using higher specificity */
+[data-theme="dark"] .contact-section .form-group input,
+[data-theme="dark"] .contact-section .form-group textarea,
+[data-theme="dark"] .contact-form-wrapper .form-group input,
+[data-theme="dark"] .contact-form-wrapper .form-group textarea {
+    background: rgba(255, 255, 255, 0.07) !important;
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .contact-section .form-group input:focus,
+[data-theme="dark"] .contact-section .form-group textarea:focus,
+[data-theme="dark"] .contact-form-wrapper .form-group input:focus,
+[data-theme="dark"] .contact-form-wrapper .form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15) !important;
+}
+
+[data-theme="dark"] .contact-section .form-group input::placeholder,
+[data-theme="dark"] .contact-section .form-group textarea::placeholder,
+[data-theme="dark"] .contact-form-wrapper .form-group input::placeholder,
+[data-theme="dark"] .contact-form-wrapper .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="dark"] .contact-section .form-group label {
+    color: #cbd5e1 !important;
+}
+
+/* Contact Form Wrapper - Dark background */
+[data-theme="dark"] .contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ===== Contact Modal - Dark Mode Input Fix ===== */
+[data-theme="dark"] .contact-modal-content {
+    background: #0d1b3e !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .contact-modal-content .form-group input,
+[data-theme="dark"] .contact-modal-content .form-group textarea {
+    background: rgba(255, 255, 255, 0.07) !important;
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .contact-modal-content .form-group input:focus,
+[data-theme="dark"] .contact-modal-content .form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15) !important;
+}
+
+[data-theme="dark"] .contact-modal-content .form-group input::placeholder,
+[data-theme="dark"] .contact-modal-content .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="dark"] .contact-modal-content .form-group label {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .contact-modal-subtitle {
+    color: rgba(255, 255, 255, 0.55) !important;
+}
+
 /* Footer Fix */
 [data-theme="dark"] .footer {
     background-color: #080d1a !important;
